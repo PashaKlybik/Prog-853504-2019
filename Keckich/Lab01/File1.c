@@ -43,6 +43,7 @@ int _tmain (int argc, _TCHAR * argv[])
 	  }
 	  t = 1;
 	}
+  free(a);
   getch ();
   return 0;
 }
