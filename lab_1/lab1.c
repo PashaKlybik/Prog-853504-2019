@@ -2,7 +2,7 @@
 #include <conio.h>
 #include <string.h>
 /*
-Вариант-6: Найти сумму первых трех цифр дробной части вещественного числа
+Variant-6
 */
 int ConvertCharToInt(char letter)
 {
@@ -25,7 +25,6 @@ int main() {
 	char fraction[15] = { 0 };
 
 	printf("Enter fraction number: ");
-	//scanf_s("%s", &fraction);
 	gets_s(fraction, 14);
 	int lengthOfFraction = strlen(fraction);
 	for (int i = 0; i < lengthOfFraction; i++)
