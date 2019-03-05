@@ -1,8 +1,8 @@
 #include "stdafx.h"
 #include <stdio.h>
-#include<math.h>
+#include <math.h>
 
-int main(void)
+int main()
 {
 	int N, i, sum = 0, counter;
 	printf_s("vvedite N\n");
