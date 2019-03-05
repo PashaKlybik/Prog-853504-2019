@@ -7,24 +7,24 @@ int _tmain(int argc, _TCHAR* argv[])
 {
 	unsigned long long numb, i = 1, CompareMask, MainMask, count;
 	printf("Your number:");
-	scanf("%llu",&numb);  // max число для ввода: 4 294 967 295
+	scanf("%llu",&numb);  // max number to enter: 4 294 967 295
 	MainMask = CompareMask =  0x3;
 
  while (MainMask < numb) {
 		count = i;
-//используем цикл do while для вывода записи чисел в двоичной системе:
+//using do while to write numbers in the binary system:
    do {
 		if ((CompareMask & MainMask) && (i % 2 == 0)) {
-//если маски при сравнении дают не 0 и номер числа в последовательности четный:
+//if the mask comparison does not give 0 and the sequence number is even:
 		 printf("00");
 		 CompareMask = CompareMask << 2;
 	   }
-//а если номер числа нечётный:
+//if the munber is odd:
 		else if (CompareMask & MainMask) {
 		 printf("11");
 		 CompareMask = CompareMask << 2;
 	   }
-//если маски при сравнении дают 0 и номер числа в последовательности четный:
+//if the mask comparison gives 0 and the sequence number is even:
 		else if ((!(CompareMask & MainMask)) && (i % 2 == 0)) {
 		 printf("11");
 		 CompareMask = CompareMask << 2;
@@ -36,7 +36,7 @@ int _tmain(int argc, _TCHAR* argv[])
 		count--;
 
 	  }   while (count != 0) ;
-//восстанавливаем маску сравнения в первоначальное состояние 0x3:
+//return the comparison mask to the initial state 0x3:
 		CompareMask = CompareMask >> i*2;
 		printf (" - %llu\n", MainMask);
 
