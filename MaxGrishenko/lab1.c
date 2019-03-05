@@ -1,7 +1,6 @@
 // 7 Вариант (Грищенко Максим)
 
 #include <stdio.h>
-#include <conio.h>
 
 int main()
 {
@@ -28,6 +27,5 @@ int main()
 		}
 	}
 	else printf("Wrong diapason!");
-	getch();
 	return 0;
 }
