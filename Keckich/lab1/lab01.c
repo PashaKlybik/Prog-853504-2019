@@ -11,7 +11,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	MainMask = CompareMask =  0x3;
 
  while (MainMask < numb) {
-		count = i;
+  count = i;
 //using do while to write numbers in the binary system:
    do {
 		if ((CompareMask & MainMask) && (i % 2 == 0)) {
