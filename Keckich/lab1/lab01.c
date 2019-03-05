@@ -15,16 +15,16 @@ int _tmain(int argc, _TCHAR* argv[])
 //using do while to write numbers in the binary system:
    do {
 		if ((CompareMask & MainMask) && (i % 2 == 0)) {
-//if the mask comparison does not give 0 and the sequence number is even:
+//if the mask comparison does not give 0 and the № of number is even:
 		 printf("00");
 		 CompareMask = CompareMask << 2;
 	   }
-//if the munber is odd:
+//if the № of number is odd:
 		else if (CompareMask & MainMask) {
 		 printf("11");
 		 CompareMask = CompareMask << 2;
 	   }
-//if the mask comparison gives 0 and the sequence number is even:
+//if the mask comparison gives 0 and the № of number is even:
 		else if ((!(CompareMask & MainMask)) && (i % 2 == 0)) {
 		 printf("11");
 		 CompareMask = CompareMask << 2;
