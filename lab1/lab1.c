@@ -1,12 +1,10 @@
 #include "stdafx.h"
 #include <stdio.h>
 #include<math.h>
-#include <stdlib.h>
-
 
 int main(void)
 {
-	int N, i, sum = 0, counter = 1;
+	int N, i, sum = 0, counter;
 	printf_s("vvedite N\n");
 	scanf_s("%d", &N);
 	i = 1;
@@ -24,6 +22,5 @@ int main(void)
 		if (i == sum) printf_s("sovershennoe %d\n", i);
 		i++;
 	}
-	system("pause");
     return 0;
 }
