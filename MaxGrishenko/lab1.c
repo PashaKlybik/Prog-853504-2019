@@ -4,7 +4,7 @@
 
 int main()
 {
-	int k,Result;			    //k = последовательность
+	int k,Result;
 	printf ("Enter sequence 'k' : ");
 	scanf("%d",&k);
 	if ((k > 0) && (k < 2701)) {        //Проверка допустимых знач. k-ой послед.
