@@ -7,7 +7,7 @@ int main()
 	int Sequence,Result;
 	printf ("Enter sequence : ");
 	scanf("%d",&Sequence);
-	if ((Sequence < 0) && (Sequence > 2701)) {		//Диапозон значений
+	if ((Sequence < 0) && (Sequence > 2701)) {		//Диапазон значений
 		printf("Wrong diapason!");
 		return 0;
 	}
