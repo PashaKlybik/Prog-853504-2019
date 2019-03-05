@@ -1,11 +1,10 @@
 #include<stdio.h>
 #include<conio.h>
 #include<stdbool.h>
-//19 variant
 
 void main()
 {
-	int s = 0, five = 0, three = 0;
+	int s = 0, five = 0, three = 0, i;
 	bool number = false;
 		while (true)
 		{
@@ -23,7 +22,8 @@ void main()
 			}
 				else break;
 		}
-		for (int i = s; i > 0; i -= 3)
+		i = s;
+		while (i > 0)
 		{
 			if (i % 5 == 0)
 			{
@@ -31,10 +31,10 @@ void main()
 				break;
 			}
 			++three;
+			i -= 3;
 		}
 		printf("number of threes: ");
 		printf("%d", three);
 		printf("\nnumber of fives: ");
-		printf("%d", five);
-	_getch();
+		printf("%d\n", five);
 }
