@@ -20,7 +20,7 @@ int main()
 		sum += proizv;
 	}
 
-	printf("sum=%d", sum);
+	printf("sum=%u", sum);
 	scanf("%d", &n);	
 	return 0;
 }
