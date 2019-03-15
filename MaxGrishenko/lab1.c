@@ -13,8 +13,8 @@ int main()
 	}
 	int Way = Sequence % 3;					//Определяем нужный столбец для вычисления
 	switch(Way){
-		case 1:Result = Sequence / 270 + 1;break;	//Сотни
-		case 2:Result = Sequence % 270 / 30;break;	//Десятки
+		case 1:Result = Sequence / 300 + 1;break;	//Сотни
+		case 2:Result = Sequence % 300 / 30;break;	//Десятки
 		default:{					//Единицы
 			if (!(Sequence % 30)) {			
 				Result = 9;
