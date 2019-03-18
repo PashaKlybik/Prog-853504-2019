@@ -15,8 +15,20 @@ int main()
 		func(&num, 100, 'C');
 		func(&num, 50, 'L');
 		func(&num, 10, 'x'); // х малое означает 10
-		func(&num, 5, 'V');
+                if (num > 3 && num <= 9) {
+			switch (num)
+			{
+			case 9: printf("Ix"); break;
+			case 8: printf("VIII"); break;
+			case 7: printf("VII"); break;
+			case 6: printf("VI"); break;
+			case 5: printf("V"); break;
+			case 4: printf("IV"); break;
+				
+			} num = 0;
+		}
 		func(&num, 1, 'I');
+		printf("\n");
 	} while (1);
 	return 0;
 }
