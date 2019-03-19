@@ -3,7 +3,7 @@ int fvozrastanie(int a);
 int fybivanie(int a);
 int main()
 {
-    int Number,vybor;
+    int Number,vybor,i;
     printf("Vvedyte number:");
     if (scanf("%d", &Number) != 1||Number<=0)//Проверка введённого числа
     {
@@ -20,7 +20,7 @@ int main()
     switch(vybor)
     {
         case 1:
-            for(int i=10; i<Number; i++)
+            for(i=10; i<Number; i++)
             {
                 if(fvozrastanie(i))
                 {
@@ -29,7 +29,7 @@ int main()
             };
             break;
         case 2:
-            for(int i=10; i<Number; i++)
+            for(i=10; i<Number; i++)
             {
                 if(fybivanie(i))
                 {
