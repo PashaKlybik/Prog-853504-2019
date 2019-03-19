@@ -9,7 +9,7 @@ int main()
 		printf("\n\nenter number:\n");
 		scanf_s("%d", &num);
 		func(&num, 10000, 'X'); // X большое означает 10тыс
-		func(&num, 5000, 'ṽ');
+		func(&num, 5000, 'V');
 		func(&num, 1000, 'M');
 		func(&num, 500, 'D');
 		func(&num, 100, 'C');
