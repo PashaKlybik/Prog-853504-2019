@@ -9,7 +9,7 @@ int main()
 	    for (int l = k; l <= m; ++l)
 	     if (k * k + l * l == m * m)
 	{
-             printf("(%i,%i,%i)\n", x, y, z);
+             printf("(%i,%i,%i)\n", k, l, m);
 	     if (++i == 10)
 	     goto t;
         }
