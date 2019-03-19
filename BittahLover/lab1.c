@@ -28,7 +28,7 @@ void main()
 			if (i % 5 == 0)
 			{
 				five = i / 5;
-				break;
+				 break;
 			}
 			++three;
 			i -= 3;
