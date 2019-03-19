@@ -5,7 +5,7 @@
 #pragma argsused
 int _tmain(int argc, _TCHAR* argv[])
 {
-	unsigned long long numb, i = 1, CompareMask, MainMask, count;
+	unsigned long long numb, i = 1, MainMask, count;
 	printf("Your number:");
 	scanf("%llu",&numb);  // max number to enter: 4 294 967 295
 	MainMask = 0x3;
