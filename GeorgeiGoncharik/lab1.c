@@ -1,9 +1,6 @@
 #include <stdio.h> 
-#include <conio.h>
 #include <math.h>
-/*
-Variant-6
-*/
+//Variant-6
 int main() 
 {
 	float fraction;
