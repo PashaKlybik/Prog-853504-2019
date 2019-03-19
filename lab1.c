@@ -40,7 +40,8 @@ void func(int * some, int dec, char L)
 	int ost = num / dec;
 	if (ost > 0)
 	{
-		for (int i = 0; i < ost; i++) printf("%c",L);
+		int i=0;
+		for (i = 0; i < ost; i++) printf("%c",L);
 	}
 	num -= ost * dec;
 	*some = num;
