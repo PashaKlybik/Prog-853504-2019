@@ -7,7 +7,7 @@ int main()
 	int num;
 	do {
 		printf("\n\nenter number:\n");
-		scanf_s("%d", &num);
+		if (scanf_s("%d", &num) == 1){
 		func(&num, 10000, 'X'); // X большое означает 10тыс
 		func(&num, 5000, 'V');
 		func(&num, 1000, 'M');
@@ -28,7 +28,8 @@ int main()
 			} num = 0;
 		}
 		func(&num, 1, 'I');
-		printf("\n");
+		printf("\n");}
+		else break;
 	} while (1);
 	return 0;
 }
