@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int getInteger()
+{
+    int number;
+    char c;
+    while (1)
+    {
+        if (!scanf("%d", &number) || getchar() != '\n')
+        {
+            while ((c = getchar()) != '\n' && c != EOF);
+        }
+        else return number;
+        
+        printf("Необходимо ввести число.\nПовторите ввод: ");
+    }
+}
+
+int main(int argc, const char * argv[]) {
+    int number = 0, cheker = 0;
+    while (number <= 0){
+        printf("Введите свое положительное число: ");
+        number = getInteger();
+    }
+    for (int i = 1; i < number; i++){
+        if (number % i == 0 && number != i){
+            if (cheker != 0)
+            printf(" + ");
+            printf("%d", i);
+            cheker += i;
+        }
+    }
+    if (cheker == number){
+        printf(" = %d \n Число совершенное.\n", cheker);
+    }
+    else printf(" = %d \n Число несовершенное.\n", cheker);
+    
+    return 0;
+}
