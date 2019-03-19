@@ -10,17 +10,16 @@ int main()
 		n = n1 + n2;//считаем новое число фибоначчи
 		n1 = n2;
 		n2 = n;
-		while (n)
+		for (;n;n/=10)
 		{
 			digits++; //считаем кол-во цифр в числе n
-			n/=10;
 		}
 	}
+
 	if (k >=3) {
 		//находим нужную цифру в числе n2
-		while (digits > k)
+		 for (; digits > k; digits--)
 		{
-			digits--;
 			n2 /= 10;
 		}
 		result = n2%10;
