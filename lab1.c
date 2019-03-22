@@ -8,12 +8,17 @@ int main()
 	do {
 		printf("\n\nenter number:\n");
 		if (scanf_s("%d", &num) == 1){
-		func(&num, 10000, 'X'); // X большое означает 10тыс
-		func(&num, 5000, 'V');
-		func(&num, 1000, 'M');
-		func(&num, 500, 'D');
-		func(&num, 100, 'C');
-		func(&num, 50, 'L');
+		 func(&num, 10000, 'X'); // X большое означает 10тыс
+            	 func(&num, 9000, '1'); // MX
+          	 func(&num, 5000, 'V');
+           	 func(&num, 4000, '2'); // MV
+           	 func(&num, 1000, 'M');
+           	 func(&num, 500, 'D');
+            	 func(&num, 400, '3'); // CD
+            	 func(&num, 100, 'C');
+            	 func(&num, 50, 'L');
+            	 func(&num , 40, '4'); // xL
+
 		func(&num, 10, 'x'); // х малое означает 10
                 if (num > 3 && num <= 9) {
 			switch (num)
@@ -36,13 +41,18 @@ int main()
 
 void func(int * some, int dec, char L)
 {
-	int num = *some;
-	int ost = num / dec;
-	if (ost > 0)
-	{
-		int i=0;
-		for (i = 0; i < ost; i++) printf("%c",L);
-	}
-	num -= ost * dec;
-	*some = num;
+    if (*some>=9000 && dec==9000) {printf("%s", "MX"); *some-=9000;}
+     else if (*some>=4000 && dec==4000) {printf("%s", "MV"); *some-=4000;}
+       else if (*some>=400 && dec==400) {printf("%s", "CD"); *some-=400;}
+         else if (*some>=40 && dec==40) {printf("%s", "xL"); *some-=40;} else
+         {
+            int num = *some;
+            int ost = num / dec;
+            if (ost > 0)
+            {
+                int i;
+                for (i = 0; i < ost; i++) printf("%c", L);
+            }
+            num -= ost * dec;
+             *some = num;}
 }
