@@ -1,26 +1,33 @@
 #include "stdafx.h"
-#include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 
+bool check(int n)
+{
+	int sum = 0;
+	for (int i = 1; i < n; i++)
+	{
+		if (n % i == 0)
+			sum += i;
+	}
+	return (sum == n);
+}
+int Euclidean_formula(int n)
+{
+	return pow(2, n - 1) * (pow(2, n) - 1);
+}
 int main()
 {
-	int N, i, sum = 0, counter;
-	printf_s("vvedite N\n");
+	int N;
+	printf_s("Vvedite N\n");
 	scanf_s("%d", &N);
-	i = 1;
-	counter = 1;
-	while (i < N)
+	for (int i = 2; Euclidean_formula(i) < N; i++)
 	{
-		sum = 0;
-		counter = 1;
-		while (counter < i)
+		if (check(Euclidean_formula(i)))
 		{
-			if (i%counter == 0)
-				sum = sum + counter;
-			counter++;
+			printf_s("%d\n", Euclidean_formula(i));
 		}
-		if (i == sum) printf_s("sovershennoe %d\n", i);
-		i++;
 	}
-    return 0;
+	system("pause");
+	return 0;
 }
