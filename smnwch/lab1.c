@@ -3,20 +3,21 @@ int main()
 {
 	int k, n, n1 =1, n2 = 1, result;
 	int digits = 2;    //счетчик цифр
-	printf("k: ");
+	printf("input k: ");
 	scanf_s("%d", &k);
-	while (digits < k)
-	{
-		n = n1 + n2;//считаем новое число фибоначчи
+	if (k<3) {
+		printf("digit: 1");
+	} else {
+	   while (digits < k)
+	 {
+		n = n1 + n2;//считаем новое число фибоначчи n
 		n1 = n2;
 		n2 = n;
 		for (;n;n/=10)
 		{
 			digits++; //считаем кол-во цифр в числе n
 		}
-	}
-
-	if (k >=3) {
+	 }
 		//находим нужную цифру в числе n2
 		 for (; digits > k; digits--)
 		{
@@ -24,6 +25,6 @@ int main()
 		}
 		result = n2%10;
 		printf("digit: %d", result);
-	} else {printf("%d", 1); }
+	}
 	return 0;
 }
