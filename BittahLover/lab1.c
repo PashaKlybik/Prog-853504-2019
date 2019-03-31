@@ -1,12 +1,13 @@
 #include<stdio.h>
-#include<math.h>
 #include<stdbool.h>
+#include<math.h>
 
 void main()
 {
 	int s = 0, five = 0, three = 0, i, n = 7;
 	bool number = false;
-		while (true)
+	bool number1 = true;
+		while (number1)
 		{
 			printf("number greater than 7 and less than 10^9: ");
 			scanf_s("%d", &s);
@@ -20,7 +21,8 @@ void main()
 				printf("read carefully, take one more chance \n");
 				number = true;
 			}
-				else break;
+			else
+			number1 = false;
 		}
 		i = s;
 		while (i > 0)
@@ -28,7 +30,7 @@ void main()
 			if (i % 5 == 0)
 			{
 				five = i / 5;
-				 break;
+				break;
 			}
 			++three;
 			i -= 3;
