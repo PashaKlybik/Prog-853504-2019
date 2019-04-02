@@ -5,7 +5,6 @@
 void main()
 {
 	int s = 0, five = 0, three = 0, i, n = 7;
-	bool number = false;
 	bool number1 = true;
 		while (number1)
 		{
@@ -14,12 +13,10 @@ void main()
 			if (s <= n)
 			{
 				printf("read carefully, take one more chance \n");
-				number = true;
 			}
 			else if (s >= pow(10,9))
 			{
 				printf("read carefully, take one more chance \n");
-				number = true;
 			}
 			else
 			number1 = false;
