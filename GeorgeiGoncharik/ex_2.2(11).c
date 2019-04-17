@@ -1,6 +1,6 @@
 /*
 	2.2(11)
-	Программа сравнения значения функции sin(x) и значения в её разложении.
+	РџСЂРѕРіСЂР°РјРјР° СЃСЂР°РІРЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ С„СѓРЅРєС†РёРё sin(x) Рё Р·РЅР°С‡РµРЅРёСЏ РІ РµС‘ СЂР°Р·Р»РѕР¶РµРЅРёРё.
 */
 #include <stdlib.h>
 #include <stdio.h>
@@ -26,37 +26,37 @@ void compare(double x, double precission)
 		razloj += ((double)sign) * powf(x, 2 * n - 1) / fact(2 * n - 1);
 		if (n > 30)
 		{
-			printf("После тысячной итерации не вышло вычислить с заданной точностью.\nsin(x) = %.8lf\nРазложение = %.8lf\n", sinx, razloj);
+			printf("РџРѕСЃР»Рµ С‚С‹СЃСЏС‡РЅРѕР№ РёС‚РµСЂР°С†РёРё РЅРµ РІС‹С€Р»Рѕ РІС‹С‡РёСЃР»РёС‚СЊ СЃ Р·Р°РґР°РЅРЅРѕР№ С‚РѕС‡РЅРѕСЃС‚СЊСЋ.\nsin(x) = %.8lf\nР Р°Р·Р»РѕР¶РµРЅРёРµ = %.8lf\n", sinx, razloj);
 		}
 	} while (razloj - sinx > precission || razloj - sinx < -precission);
-	printf("После %d попытки с точностью %.8lf :\nsin(x) = %.8lf\nРазложение = %.8lf\n", n, precission, sinx, razloj);
+	printf("РџРѕСЃР»Рµ %d РїРѕРїС‹С‚РєРё СЃ С‚РѕС‡РЅРѕСЃС‚СЊСЋ %.8lf :\nsin(x) = %.8lf\nР Р°Р·Р»РѕР¶РµРЅРёРµ = %.8lf\n", n, precission, sinx, razloj);
 }
 int main()
 {
 	setlocale(LC_ALL, "Russian");
-	printf("Программа сравнения значения функции sin(x) и значения в её разложении.\n");
+	printf("РџСЂРѕРіСЂР°РјРјР° СЃСЂР°РІРЅРµРЅРёСЏ Р·РЅР°С‡РµРЅРёСЏ С„СѓРЅРєС†РёРё sin(x) Рё Р·РЅР°С‡РµРЅРёСЏ РІ РµС‘ СЂР°Р·Р»РѕР¶РµРЅРёРё.\n");
 	double x;
 	double precission;
 	char in_again = 'y';
 	while (in_again == 'y')
 	{
-		printf("Введите число x : ");
+		printf("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ x : ");
 		while (!scanf("%lf", &x))
 		{
 		error1:
 			while (getchar() != '\n');
-			printf("Неверный ввод. Введите ещё раз: ");
+			printf("РќРµРІРµСЂРЅС‹Р№ РІРІРѕРґ. Р’РІРµРґРёС‚Рµ РµС‰С‘ СЂР°Р·: ");
 		}
 		if (getchar() != '\n')
 		{
 			goto error1;
 		}
-		printf("Введите заданную точность (не менее 1e-6): ");
+		printf("Р’РІРµРґРёС‚Рµ Р·Р°РґР°РЅРЅСѓСЋ С‚РѕС‡РЅРѕСЃС‚СЊ (РЅРµ РјРµРЅРµРµ 1e-6): ");
 		while (!scanf("%lf", &precission) || precission < 0 || fabs(precission) < 1e-6)
 		{
 		error2:
 			while (getchar() != '\n');
-			printf("Неверный ввод. Введите ещё раз: ");
+			printf("РќРµРІРµСЂРЅС‹Р№ РІРІРѕРґ. Р’РІРµРґРёС‚Рµ РµС‰С‘ СЂР°Р·: ");
 		}
 		if (getchar() != '\n')
 		{
@@ -67,7 +67,7 @@ int main()
 		while (x < -4)
 			x += 3.14159265;
 		compare(x, precission);
-		printf("Ввести ещё одно x? (y \ another key) \t");
+		printf("Р’РІРµСЃС‚Рё РµС‰С‘ РѕРґРЅРѕ x? (y \ another key) \t");
 		scanf("%c", &in_again);
 	}
 	return 0;
