@@ -1,6 +1,6 @@
 /*
 	5.2(11)
-	Разработать функции сравнения и копирования бинарного дерева.
+	Р Р°Р·СЂР°Р±РѕС‚Р°С‚СЊ С„СѓРЅРєС†РёРё СЃСЂР°РІРЅРµРЅРёСЏ Рё РєРѕРїРёСЂРѕРІР°РЅРёСЏ Р±РёРЅР°СЂРЅРѕРіРѕ РґРµСЂРµРІР°.
 */
 #include <locale.h>
 #include <stdlib.h>
@@ -31,7 +31,7 @@ void inputInt(int* number, int l_border, int r_border)
 	{
 	error:
 		while (getchar() != '\n');
-		printf("Неверный ввод. Попробуйте ещё раз : ");
+		printf("РќРµРІРµСЂРЅС‹Р№ РІРІРѕРґ. РџРѕРїСЂРѕР±СѓР№С‚Рµ РµС‰С‘ СЂР°Р· : ");
 	}
 	if (getchar() != '\n')
 		goto error;
@@ -42,7 +42,7 @@ void inputIntSimple(int* number)
 	{
 	error:
 		while (getchar() != '\n');
-		printf("Неверный ввод. Попробуйте ещё раз : ");
+		printf("РќРµРІРµСЂРЅС‹Р№ РІРІРѕРґ. РџРѕРїСЂРѕР±СѓР№С‚Рµ РµС‰С‘ СЂР°Р· : ");
 	}
 	if (getchar() != '\n')
 		goto error;
@@ -283,46 +283,46 @@ int main()
 	struct Node* tree1 = 0;
 	struct Node* tree2 = 0;
 	int choice;
-	printf("Доступные действия :\n1 - Добавить число в 1 дерево\n2 - Добавить число в 2 дерево\n3 - Удалить число из 1 дерева\n4 - Удалить число из 2 дерева\n5 - Показать деревья\n6 - Сравнить деревья\n7 - Скопировать первое дерево во второе\n8 - Выход\n");
+	printf("Р”РѕСЃС‚СѓРїРЅС‹Рµ РґРµР№СЃС‚РІРёСЏ :\n1 - Р”РѕР±Р°РІРёС‚СЊ С‡РёСЃР»Рѕ РІ 1 РґРµСЂРµРІРѕ\n2 - Р”РѕР±Р°РІРёС‚СЊ С‡РёСЃР»Рѕ РІ 2 РґРµСЂРµРІРѕ\n3 - РЈРґР°Р»РёС‚СЊ С‡РёСЃР»Рѕ РёР· 1 РґРµСЂРµРІР°\n4 - РЈРґР°Р»РёС‚СЊ С‡РёСЃР»Рѕ РёР· 2 РґРµСЂРµРІР°\n5 - РџРѕРєР°Р·Р°С‚СЊ РґРµСЂРµРІСЊСЏ\n6 - РЎСЂР°РІРЅРёС‚СЊ РґРµСЂРµРІСЊСЏ\n7 - РЎРєРѕРїРёСЂРѕРІР°С‚СЊ РїРµСЂРІРѕРµ РґРµСЂРµРІРѕ РІРѕ РІС‚РѕСЂРѕРµ\n8 - Р’С‹С…РѕРґ\n");
 	int inputData;
 	while (1)
 	{
-		printf("Действие : ");
+		printf("Р”РµР№СЃС‚РІРёРµ : ");
 		inputInt(&choice, 1, 8);
 		switch (choice)
 		{
 		case 1:
-			printf("Число : ");
+			printf("Р§РёСЃР»Рѕ : ");
 			inputInt(&inputData, 0, 60000);
 			tree1 = pushTree(tree1, inputData);
 			break;
 		case 2:
-			printf("Число : ");
+			printf("Р§РёСЃР»Рѕ : ");
 			inputInt(&inputData, 0, 60000);
 			tree2 = pushTree(tree2, inputData);
 			break;
 		case 3:
-			printf("Удаляемое число: ");
+			printf("РЈРґР°Р»СЏРµРјРѕРµ С‡РёСЃР»Рѕ: ");
 			inputInt(&inputData, 0, 60000);
 			tree1 = Delete(tree1, inputData);
 			break;
 		case 4:
-			printf("Удаляемое число: ");
+			printf("РЈРґР°Р»СЏРµРјРѕРµ С‡РёСЃР»Рѕ: ");
 			inputInt(&inputData, 0, 60000);
 			tree2 = Delete(tree2, inputData);
 			break;
 		case 5:
-			printf("Дерево 1 : ");
+			printf("Р”РµСЂРµРІРѕ 1 : ");
 			StraightPrint(tree1);
-			printf("\nДерево 2 : ");
+			printf("\nР”РµСЂРµРІРѕ 2 : ");
 			StraightPrint(tree2);
 			printf("\n");
 			break;
 		case 6:
 			if (Equal(tree1, tree2) == 1)
-				printf("Деревья равны\n");
+				printf("Р”РµСЂРµРІСЊСЏ СЂР°РІРЅС‹\n");
 			else
-				printf("Деревья не равны\n");
+				printf("Р”РµСЂРµРІСЊСЏ РЅРµ СЂР°РІРЅС‹\n");
 			break;
 		case 7:
 			tree2 = Copy1in2(tree1, tree2);
