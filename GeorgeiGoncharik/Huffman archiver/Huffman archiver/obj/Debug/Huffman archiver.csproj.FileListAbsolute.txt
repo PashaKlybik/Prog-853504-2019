@@ -1,0 +1,11 @@
+C:\Users\Daniil\Desktop\Huffman archiver\Huffman archiver\bin\Debug\Huffman archiver.exe.config
+C:\Users\Daniil\Desktop\Huffman archiver\Huffman archiver\bin\Debug\Huffman archiver.exe
+C:\Users\Daniil\Desktop\Huffman archiver\Huffman archiver\bin\Debug\Huffman archiver.pdb
+C:\Users\Daniil\Desktop\Huffman archiver\Huffman archiver\obj\Debug\Huffman archiver.csprojResolveAssemblyReference.cache
+C:\Users\Daniil\Desktop\Huffman archiver\Huffman archiver\obj\Debug\Huffman_archiver.FileNotFoundForm.resources
+C:\Users\Daniil\Desktop\Huffman archiver\Huffman archiver\obj\Debug\Huffman_archiver.ArchiveForm.resources
+C:\Users\Daniil\Desktop\Huffman archiver\Huffman archiver\obj\Debug\Huffman_archiver.Properties.Resources.resources
+C:\Users\Daniil\Desktop\Huffman archiver\Huffman archiver\obj\Debug\Huffman archiver.csproj.GenerateResource.Cache
+C:\Users\Daniil\Desktop\Huffman archiver\Huffman archiver\obj\Debug\Huffman archiver.csproj.CoreCompileInputs.cache
+C:\Users\Daniil\Desktop\Huffman archiver\Huffman archiver\obj\Debug\Huffman archiver.exe
+C:\Users\Daniil\Desktop\Huffman archiver\Huffman archiver\obj\Debug\Huffman archiver.pdb

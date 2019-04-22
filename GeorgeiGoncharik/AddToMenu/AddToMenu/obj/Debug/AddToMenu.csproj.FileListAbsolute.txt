@@ -1,0 +1,7 @@
+C:\Users\Daniil\Desktop\AddToMenu\AddToMenu\bin\Debug\AddToMenu.exe.config
+C:\Users\Daniil\Desktop\AddToMenu\AddToMenu\bin\Debug\AddToMenu.exe
+C:\Users\Daniil\Desktop\AddToMenu\AddToMenu\bin\Debug\AddToMenu.pdb
+C:\Users\Daniil\Desktop\AddToMenu\AddToMenu\obj\Debug\AddToMenu.csprojResolveAssemblyReference.cache
+C:\Users\Daniil\Desktop\AddToMenu\AddToMenu\obj\Debug\AddToMenu.csproj.CoreCompileInputs.cache
+C:\Users\Daniil\Desktop\AddToMenu\AddToMenu\obj\Debug\AddToMenu.exe
+C:\Users\Daniil\Desktop\AddToMenu\AddToMenu\obj\Debug\AddToMenu.pdb
