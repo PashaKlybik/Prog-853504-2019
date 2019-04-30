@@ -17,7 +17,7 @@ int main(int argc, const char * argv[]) {
     scanf("%d",&m);
     
     char str[30];
-    while(1)
+    while(number > m)
     {
         if(c%2)
         {
@@ -39,10 +39,7 @@ int main(int argc, const char * argv[]) {
                 k *= 2;
             }
         }
-        if(number > m)
-        {
-            return 0;
-        }
+        
      printf("%s %d\n",str,number);
     }
     return 0;
