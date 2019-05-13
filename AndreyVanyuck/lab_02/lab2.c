@@ -239,7 +239,7 @@ int main() {
 			break;
 		case 5: 
 			if (isEquilateral(sideLength)) {
-				printf("\Area is %lf\n\n", getArea(sideLength));
+				printf("\nArea is %lf\n\n", getArea(sideLength));
 			}
 			else {
 				printf("\nIt's not a triangle\n\n");
