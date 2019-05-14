@@ -15,6 +15,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
+#include <stdlib.h>
 #include <math.h>
 
 #define SIZE 3
@@ -57,7 +58,12 @@ bool isTriangle(double sideLength[]) {
 }
 
 bool isEquilateral(double sideLength[]) {
-	return sideLength[0] == sideLength[1] == sideLength[2];
+	if ((sideLength[0] == sideLength[1]) && (sideLength[0] == sideLength[2])){
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 
 bool isRight(double sideLength[]) {
@@ -124,8 +130,8 @@ int main() {
 		
 		char str[MAX];
 		int temp;
-		
-		gets(str);
+	
+		scanf("%s", str);
 		
 		if (isInt(str)) {
 			temp = atoi(str);
@@ -143,7 +149,7 @@ int main() {
 				printf("\nThe coordinates of the points of the segment: \n");
 				printf("X1 = ");
 				
-				gets(str);
+				scanf("%s", str);
 				
 				if (isInt(str)) {
 					x1 = atoi(str);
@@ -155,7 +161,7 @@ int main() {
 				
 				printf("Y1 = ");
 
-				gets(str);
+				scanf("%s", str);
 				
 				if (isInt(str)) {
 					y1 = atoi(str);
@@ -167,7 +173,7 @@ int main() {
 
 				printf("X2 = ");
 
-				gets(str);
+				scanf("%s", str);
 				
 				if (isInt(str)) {
 					x2 = atoi(str);
@@ -179,7 +185,7 @@ int main() {
 
 				printf("Y2 = ");
 				
-				gets(str);
+				scanf("%s", str);
 				
 				if (isInt(str)) {
 					y2 = atoi(str);
