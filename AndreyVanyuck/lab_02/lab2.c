@@ -20,11 +20,6 @@
 #define SIZE 3
 #define MAX 128
 
-struct coordinateOfPoint {
-	int X;
-	int Y;
-};
-
 bool isInt(char str[]) {
 	int length = strlen(str);
 
@@ -38,8 +33,8 @@ bool isInt(char str[]) {
 	return true;
 }
 
-double getDistance(struct coordinateOfPoint point1, struct coordinateOfPoint point2) {
-	return sqrt(pow((double)(point1.X - point2.X), 2) + pow((double)(point1.Y - point2.Y), 2));
+double getDistance(int x1, int y1, int x2, int y2) {
+	return sqrt(pow((double)(x1 - x2), 2) + pow((double)(y1 - y2), 2));
 }
 
 bool isTriangle(double sideLength[]) {
@@ -114,11 +109,9 @@ double getArea(double sideLength[]) {
 }
 
 int main() {
-	struct coordinateOfPoint coordinatesOfSegmentPoints[2];
 	double sideLength[SIZE];
 
 	bool isReenter = true;
-	int temp;
 
 	while (isReenter) {
 		printf("1 - Data input\n");
@@ -130,8 +123,10 @@ int main() {
 		printf("7 - Exit\n\n");
 		
 		char str[MAX];
+		int temp;
+		
 		gets(str);
-
+		
 		if (isInt(str)) {
 			temp = atoi(str);
 		}
@@ -143,13 +138,15 @@ int main() {
 		switch (temp) {
 		case 1:
 			for (int i = 0; i < SIZE; i++) {
-				printf("\nThe coordinates of the points of the segment: \n");
+				int x1, y1, x2, y2;
 				
+				printf("\nThe coordinates of the points of the segment: \n");
 				printf("X1 = ");
 				
 				gets(str);
+				
 				if (isInt(str)) {
-					coordinatesOfSegmentPoints[0].X = atoi(str);
+					x1 = atoi(str);
 				}
 				else {
 					printf("\nWrong input! Try again!\n\n");
@@ -159,8 +156,9 @@ int main() {
 				printf("Y1 = ");
 
 				gets(str);
+				
 				if (isInt(str)) {
-					coordinatesOfSegmentPoints[0].Y = atoi(str);
+					y1 = atoi(str);
 				}
 				else {
 					printf("\nWrong input! Try again!\n\n");
@@ -170,8 +168,9 @@ int main() {
 				printf("X2 = ");
 
 				gets(str);
+				
 				if (isInt(str)) {
-					coordinatesOfSegmentPoints[1].X = atoi(str);
+					x2 = atoi(str);
 				}
 				else {
 					printf("\nWrong input! Try again!\n\n");
@@ -181,15 +180,16 @@ int main() {
 				printf("Y2 = ");
 				
 				gets(str);
+				
 				if (isInt(str)) {
-					coordinatesOfSegmentPoints[1].Y = atoi(str);
+					y2 = atoi(str);
 				}
 				else {
 					printf("\nWrong input! Try again!\n\n");
 					break;
 				}
 				
-				sideLength[i] = getDistance(coordinatesOfSegmentPoints[0], coordinatesOfSegmentPoints[1]);
+				sideLength[i] = getDistance(x1, y1, x2, y2);
 			}
 			break;
 		case 2:
@@ -238,7 +238,7 @@ int main() {
 			}
 			break;
 		case 5: 
-			if (isEquilateral(sideLength)) {
+			if (isTriangle(sideLength)) {
 				printf("\nArea is %lf\n\n", getArea(sideLength));
 			}
 			else {
@@ -246,7 +246,7 @@ int main() {
 			}
 			break;
 		case 6:
-			printf("Version:    1.0.0\nCopyright  2019 Andrey Vanyuck\n\n");
+			printf("\nVersion:    1.0.0\nCopyright  2019 Andrey Vanyuck\n\n");
 			break;
 		case 7:
 			isReenter = false;
