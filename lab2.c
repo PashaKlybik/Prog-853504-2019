@@ -68,7 +68,7 @@ void information()
 
 int main()
 {
-    int unitsOfMeasure = 0, isInputTrue = 0, isTrue = 0, answer = 0, answer1 = 1;
+    int unitsOfMeasure = 0, isInputTrue = 0, answer = 0, answer1 = 1;
     double number = 0;
     setlocale(LC_ALL, "Russian");
     while (1)
@@ -125,7 +125,6 @@ int main()
                 {
                     return 0;
                 }
-      
             }
         }
     }
