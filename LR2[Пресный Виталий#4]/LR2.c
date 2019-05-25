@@ -40,22 +40,17 @@ int Input()       //проверка на ввод
 }
 
 void SetVegetables(int *potato, int *carrot, int *beet)  //указатели, чтобы изменялись значения переменных после ввода
-{
-	
-	
+{		
 		printf("Set value of potato:");
 		*potato = Input();
 		printf("Set value of carrot:");
 		*carrot = Input();
 		printf("Set value of beet:");
-		*beet = Input();
-
-	
+		*beet = Input();	
 }
 
 void GetVegetables(int potato, int carrot, int beet)
 {
-	
 	printf("Kg of potato:%d\n",potato);
 	printf("Kg of carrot:%d\n", carrot);
 	printf("Kg of beet:%d\n", beet);
@@ -63,8 +58,7 @@ void GetVegetables(int potato, int carrot, int beet)
 }
 
 void Calculate(int potato, int carrot, int beet)
-{
-	
+{	
 	int cost_potato = potato * 500;
 	int cost_carrot = carrot * 1000;
 	int cost_beet = beet * 700;
@@ -94,8 +88,7 @@ void Calculate(int potato, int carrot, int beet)
 }
 
 void Feedback()
-{
-	
+{	
 	printf("Name of shop - BsuirVegetables\n");
 	printf("Number of licence - 931251189\n");
 	printf("Mail - pashaklybik@gmail.com\n");
