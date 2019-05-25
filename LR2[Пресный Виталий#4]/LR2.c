@@ -91,7 +91,7 @@ void Feedback()
 {	
 	printf("Name of shop - BsuirVegetables\n");
 	printf("Number of licence - 931251189\n");
-	printf("Mail - pashaklybik@gmail.com\n");
+	printf("Mail - bsuir@gmail.com\n");
 }
 
 
@@ -103,7 +103,7 @@ int main()
 	{
 		
 		printf("1-Order vegetables\n2-Check list\n3-Calculate the cost of the order\n4-Feedback\n5-Exit\n");
-		scanf("%d", &choice);
+		choice=Input();
 		switch (choice)
 		{
 		case 1:SetVegetables(&potato, &carrot, &beet); break;
