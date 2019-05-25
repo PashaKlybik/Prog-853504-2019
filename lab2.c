@@ -117,7 +117,7 @@ int main()
                         information();
                         break;
                     case 5:
-                        break;
+                        return 0;
                 }
                 printf("Если хотите ввести еще раз, нажмите 1\n");
                 scanf("%d", &answer1);
