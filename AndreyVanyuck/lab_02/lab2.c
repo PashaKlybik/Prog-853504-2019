@@ -21,6 +21,20 @@
 #define SIZE 3
 #define MAX 128
 
+struct point {
+	int x;
+	int y;
+};
+
+bool isAddPoint(struct point arrOfPoints[], struct point point) {
+	for (int i = 0; i < SIZE; i++) {
+		if ((point.x == arrOfPoints[i].x) && (point.y == arrOfPoints[i].y)) {
+			return false;
+		}
+	}
+	return true;
+}
+
 bool isInt(char str[]) {
 	int length = strlen(str);
 
@@ -66,22 +80,18 @@ bool isEquilateral(double sideLength[]) {
 	}
 }
 
-bool isRight(double sideLength[]) {
+bool isRectangular(double sideLength[]) {
 	double maxLengthOfSide = sideLength[0];
-	int indexOfMaxSideLength = 0;
-
-	for (int i = 1; i < SIZE; i++) {
-		if (maxLengthOfSide < sideLength[i]) {
-			maxLengthOfSide = sideLength[i];
-			indexOfMaxSideLength = i;
-		}
-	}
-
 	double sumOfSquaresSides = 0;
 
 	for (int i = 0; i < SIZE; i++) {
-		sumOfSquaresSides += indexOfMaxSideLength != i ? pow(sideLength[i], 2) : 0;
+		sumOfSquaresSides += pow(sideLength[i], 2);
+		if (maxLengthOfSide < sideLength[i]) {
+			maxLengthOfSide = sideLength[i];
+		}
 	}
+
+	sumOfSquaresSides /= 2;
 	
 	return pow(maxLengthOfSide, 2) == sumOfSquaresSides;
 }
@@ -116,7 +126,8 @@ double getArea(double sideLength[]) {
 
 int main() {
 	double sideLength[SIZE];
-
+	struct point arrOfPoints[SIZE];
+	struct point point;
 	bool isReenter = true;
 
 	while (isReenter) {
@@ -140,9 +151,10 @@ int main() {
 			printf("\nWrong input! Try again!\n\n");
 			continue;
 		}
-
+		int count;
 		switch (temp) {
 		case 1:
+			count = 0;
 			for (int i = 0; i < SIZE; i++) {
 				int x1, y1, x2, y2;
 				
@@ -170,7 +182,18 @@ int main() {
 					printf("\nWrong input! Try again!\n\n");
 					break;
 				}
-
+				
+				point.x = x1;
+				point.y = y1;
+				if (isAddPoint(arrOfPoints, point)) {
+					arrOfPoints[count] = point;
+					count++;
+				}
+				if (count == SIZE + 1) {
+					printf("\nIt's not a triangle! Try again\n\n");
+					break;
+				}
+				
 				printf("X2 = ");
 
 				scanf("%s", str);
@@ -195,6 +218,17 @@ int main() {
 					break;
 				}
 				
+				point.x = x2;
+				point.y = y2;
+				if (isAddPoint(arrOfPoints, point)) {
+					arrOfPoints[count] = point;
+					count++;
+				}
+				if (count == SIZE + 1) {
+					printf("\nIt's not a triangle! Try again\n\n");
+					break;
+				}
+				
 				sideLength[i] = getDistance(x1, y1, x2, y2);
 			}
 			break;
@@ -215,8 +249,8 @@ int main() {
 					isArbitrary = false;
 				}
 
-				if (isRight(sideLength)) {
-					printf("\nTriangle is right\n\n");
+				if (isRectangular(sideLength)) {
+					printf("\nTriangle is rectangular\n\n");
 					isArbitrary = false;
 				}
 
