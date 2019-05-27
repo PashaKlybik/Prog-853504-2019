@@ -1,84 +1,88 @@
+/* Air Comfort. Компания занимается установкой стеклопакетов;
+ планируется, что после открытия сайта компании, пользователи
+ смогут спроектировать и рассчитать стоимость установки
+ стеклопакетов прямо в интернете. Вам поручается разработать
+ модуль на С, выполняющий следующие функции:
+ • Ввод количества окон в квартире
+ • Ввод количества балконов.
+ • Ввод этажа, на котором находится квартира
+ • Расчет и вывод параметров проекта: общая площадь
+ застекления, стоимость застекления окон, стоимость установки
+ балконной двери, процентная надбавка.
+ • Вывод общей стоимости проекта
+ • Краткая информация о компании и контакты.
+ • Выход из программы
+ Справочные сведения. Стоимость одного стандартного оконного
+ пакета(2,15х1,50 м) составляет $100, включая установку.
+ Стоимость балконной двери (0,70х2,15 м) составляет $150,
+ включая установку. Если квартира находится выше первого
+ этажа, за установку каждого стеклопакета взимается
+ дополнительно 15% его стоимости.
+ */
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
-#include <string.h>
 
-void Information(void) {
-	char str[20], str1[20], str2[20];
-	int h = 0;
-	float window = 0, balcony = 0, floor = 0, i = 0;
-	int costw = 0, costb = 0;
-	printf("Input the number of windows: ");
-	fgets(str,20,stdin);
-	window = atoi(str);
-	if (window < 0 || window != (int)window) {
-		printf("Error");
-		exit(0);
-	}
-	costw = 100 * window;
-	h = 0;
-	printf("Input the number of balconies: ");
-	fgets(str1,20,stdin);
-	while (str1[h]) {
-		if (isalpha(str1[h])) {
-			printf("error");
-			exit(0);
-		}
-		h++;
-	}
-	balcony = atoi(str1);
-	if (balcony < 0 || balcony != (int)balcony) {
-		printf("Error");
-		exit(0);
-	}
-	costb = 150 * balcony;
-	h = 0;
-	printf("Input the floor number: ");
-	fgets(str2,20,stdin);
-	while (str2[h]) {
-		if (isalpha(str2[h])) {
-			printf("Error");
-			exit(0);
-		}
-		h++;
-	}
-	floor = atoi(str2);
-	if (floor < 0 || floor != (int)floor) {
-		printf("Error");
-		exit(0);
-	}
-	i = (floor <= 1 ? 0 : costw * 0.15 + costb * 0.15);
+char s[20];
+
+void InfoAboutUs(void) {
+	printf("\nCompany: New-Design\nAdress: Minsk, Mazurova, 1, second floor\nPhone: +375296801013\n");
+}
+
+void Information(int balcony, int floor, int window) {
+	float i = (floor <= 1 ? 0 : 100 * window * 0.15 + 150 * balcony * 0.15);
 	printf("\nTotal area: %.3f square metres\n", 2.15*1.5*window + 0.7*2.15*balcony);
-	printf("Cost of windows: %u$\n", costw);
-	printf("Cost of balconies: %u$\n", costb);
+	printf("Cost of windows: %u$\n", 100*window);
+	printf("Cost of balconies: %u$\n", 150*balcony);
 	printf("Surcharge: %.1f$\n", i);
-	printf("Total cost: %.1f$\n", i + costw + costb);
-	printf("Information about us\nCompany: New-Design\nAdress: Minsk, Mazurova, 1, second floor\nPhone: +375296801013\n");
-}
-void TryAgain(char answer)
-{
-
-	if (answer=='n')
-	{
-		printf("Goodbye!\n");
-	}
-	else if (answer!='y')
-	{
-		printf("Wrong input!\nDo you want to try again?(y or n): ");
-		scanf(" %c", &answer);
-		TryAgain(answer);
-	}
+	printf("Total cost: %.1f$\n", i + 100*window + 150*balcony);
 }
 
-int main()
-{
-	char answer;
-	do {
-		Information();
-		printf("\n\nDo you want to try again?(y or n): ");
-		scanf(" %c", &answer);
-		TryAgain(answer);
+void Menu(void) {
+	printf("\n________________________________________________\n\n");
+	printf("1 - Input data and get information about project");
+	printf("\n2 - Print information about us ");
+	printf("\n3 - Exit");
+	printf("\n________________________________________________\n");
+}
+
+int Check(void) {
+	int i = 0;
+	while (!i) {
+		scanf("%s", s);
+		i = atoi(s);
+		if (i <= 0) {
+			i = 0;
+			printf("Wrond input. Input your data again: ");
+		}
 	}
-	while (answer == 'y');
-	return 0;
+	return i;
+}
+
+int main() {
+	int answer, balcony, floor, window;
+	while (1) {
+		Menu();
+		answer = Check();
+		switch (answer) {
+		case 1:
+			printf("\nInput the number of balconies: ");
+			balcony = Check();
+			printf("Input the number of windows: ");
+			window = Check();
+			printf("Input the number of floor: ");
+			floor = Check();
+			Information(balcony, floor, window);
+			break;
+		case 2:
+			InfoAboutUs();
+			break;
+		case 3:
+			printf("Goodbye!");
+			return 0;
+		default:
+			printf("Incorrect input! Input 1, 2 or 3");
+			break;
+		}
+	}
+
 }
