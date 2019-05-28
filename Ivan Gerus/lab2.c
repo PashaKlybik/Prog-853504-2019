@@ -17,6 +17,7 @@
 int ax, bx, cx, ay, by, cy;
 double a, b, c;
 double P, S;
+double e = 0.001;
 bool check = false;
 
 void input()
@@ -36,7 +37,7 @@ void input()
 
 void type()
 {
-    if (((pow(a, 2) + pow(b, 2)) == pow(c, 2)) || ((pow(a, 2) + pow(c, 2)) == pow(b, 2)) || ((pow(c, 2) + pow(b, 2)) == pow(a, 2)))
+    if ((a-b-c)<=e || (b-a-c)<=e ||(c-a-b)<=e)
     {
         check = true;
         printf("Прямоугольный\n");
