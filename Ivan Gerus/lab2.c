@@ -37,7 +37,7 @@ void input()
 
 void type()
 {
-    if ((a-b-c)<=e || (b-a-c)<=e ||(c-a-b)<=e)
+    if ((pow(a, 2)-pow(b, 2)-pow(c, 2))<=e || (pow(b, 2)-pow(c, 2)-pow(a, 2))<=e ||(pow(c, 2)-pow(b, 2)-pow(a, 2))<=e)
     {
         check = true;
         printf("Прямоугольный\n");
