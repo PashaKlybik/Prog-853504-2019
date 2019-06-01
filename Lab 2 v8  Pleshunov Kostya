@@ -1,0 +1,186 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 100
+
+struct addr {
+  char name[30];
+  int gb;
+  int min;
+
+} addr_list[MAX];
+
+void init_list(void);
+void enter(void);
+void deletee(void);
+void list(void);
+int menu_select(void);
+int find_free(void);
+void tarif (void);
+void inf(void);
+void contacts (void);
+
+int main(void)
+{
+  char choice ;
+  init_list();
+  for(;;) {
+  choice = menu_select();
+  switch(choice)
+   {
+	  case 1: enter();
+	   break;
+	  case 2: deletee();
+		break;
+	  case 3: list();
+		break;
+	  case 4: tarif();
+		break;
+	  case 5: return 0;
+		break;
+	  case 6: inf();
+		break;
+	  case 7: contacts();
+		break;
+   }
+  }
+  return 0;
+}
+
+void init_list(void)
+{
+  register int t;
+  for(t=0; t<MAX; ++t)
+  addr_list[t].name[0] = '\0';
+}
+
+int menu_select(void)
+{
+  char s[80];
+  int c;
+  printf("1. Input\n");
+  printf("2. Delete\n");
+  printf("3. List display\n");
+  printf("4. Rate\n");
+  printf("5. Exit\n");
+  printf("6. Tarifs\n");
+  printf("7. Contacts\n");
+  do
+  {
+	printf("\nNomer need:");
+	gets(s);
+	c = atoi(s);
+  } while(c<0 || c>7);
+  system("cls");
+  return c;
+}
+
+void enter(void)
+{
+  int slot;
+  char s[80];
+
+  slot = find_free();
+
+  if(slot==-1) {
+	printf("\nFULL!");
+	return;
+  }
+
+  printf("Name: ");
+  gets(addr_list[slot].name);
+
+  printf("Quantity gb(0 for inf): ");
+  scanf("%i",&addr_list[slot].gb);
+
+  printf("Minutes to all networks(0 for inf): ");
+  scanf("%i",&addr_list[slot].min);
+ }
+
+int find_free(void)
+{
+  register int t;
+  for(t=0; addr_list[t].name[0] && t<MAX; ++t) ;
+  if(t==MAX) return -1;
+  return t;
+}
+
+void deletee(void)
+{
+  register int slot;
+  char s[80];
+  printf("Record number: ");
+  gets(s);
+  slot = atoi(s);
+  if(slot>=0 && slot < MAX)
+  addr_list[slot].name[0] = '\0';
+}
+
+void list(void)
+{
+  register int t;
+  for(t=0; t<MAX; ++t)
+  {
+	if(addr_list[t].name[0])
+	{
+	  printf("Name:%s\n", addr_list[t].name);
+	  printf("Gb:%i\n", addr_list[t].gb);
+	  printf("Min:%i\n", addr_list[t].min);
+	}
+  }
+  printf("\n\n");
+ }
+
+void tarif(void)
+ {
+  register int t;
+  for(t=0; t<MAX; ++t)
+  {
+	if(addr_list[t].name[0])
+	{
+	 if(addr_list[t].gb>=15&&addr_list[t].min==0)
+	 {
+	   printf("%s\n", addr_list[t].name);
+	   printf("Super max\n");
+	 }
+	 if(addr_list[t].gb>=8&&addr_list[t].min>=400&&addr_list[t].gb<15&&addr_list[t].min<1000)
+	 {
+	   printf("%s\n", addr_list[t].name);
+	   printf("Super 8\n");
+	 }
+	 if(addr_list[t].gb>=1&&addr_list[t].min>=0&&addr_list[t].gb<8&&addr_list[t].min<400)
+	 {
+	   printf("%s\n", addr_list[t].name);
+	   printf("Super \n");
+	 }
+	 if(addr_list[t].gb>=10&&addr_list[t].min>=1000&&addr_list[t].gb<15)
+	 {
+	   printf("%s\n", addr_list[t].name);
+	   printf("Ultra\n");
+	 }
+	 if(addr_list[t].gb==0&&addr_list[t].gb==0)
+	 {
+	  printf("%s\n", addr_list[t].name);
+	  printf("Absolute\n");
+	 }
+	 else
+	 {
+		printf("Absolute\n");
+	 }
+   }
+  }
+  printf("\n\n");
+ }
+
+ void inf(void)
+ {
+	printf("Super max\nInternet 15gb\nCalls inf\n");
+	printf("Super 8\nInternet 8gb\nCalls 400 min\n");
+	printf("Super \nInternet 1gb\nCalls 200 min\n");
+	printf("Ultra\nInternet 10gb\nCalls 100 min\n");
+	printf("Absolute\nInternet inf\nCalls inf\n");
+ }
+
+ void contacts(void)
+ {
+   printf("0860 (for MTC)\n8 801 100 76 77(free)\n8 017 237 98 28\n");
+ }
