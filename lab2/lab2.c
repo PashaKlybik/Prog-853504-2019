@@ -53,7 +53,7 @@ int CheckAnswer(void) {
 		i = atoi(s);
 		if (i <= 0) {
 			i = 0;
-			printf("Incorrect answer! Input 1, 2 or 3.\nYour answer: ");
+			printf("Incorrect answer!\nYour answer: ");
 		}
 	}
 	return i;
