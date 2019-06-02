@@ -22,14 +22,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char s[20];
+char s[30]; //переменная для проверки ввода
 
-void InfoAboutUs(void) {
+oid InfoAboutUs(void) {
 	printf("\nCompany: New-Design\nAdress: Minsk, Mazurova, 1, second floor\nPhone: +375296801013\n");
 }
 
 void Information(int balcony, int floor, int window) {
-	float i = (floor <= 1 ? 0 : 100 * window * 0.15 + 150 * balcony * 0.15);
+	float i = (floor <= 1 ? 0 : 100 * window * 0.15 + 150 * balcony * 0.15); //считаем надбавку, если этаж первый, то надбавка 0
 	printf("\nTotal area: %.3f square metres\n", 2.15*1.5*window + 0.7*2.15*balcony);
 	printf("Cost of windows: %u$\n", 100*window);
 	printf("Cost of balconies: %u$\n", 150*balcony);
@@ -42,35 +42,36 @@ void Menu(void) {
 	printf("1 - Input data and get information about project");
 	printf("\n2 - Print information about us ");
 	printf("\n3 - Exit");
-	printf("\n________________________________________________\n");
+	printf("\n________________________________________________\n\n");
+	printf("Your answer: ");
 }
 
-int Check(void) {
+int CheckAnswer(void) {
 	int i = 0;
 	while (!i) {
 		scanf("%s", s);
 		i = atoi(s);
 		if (i <= 0) {
 			i = 0;
-			printf("Wrond input. Input your data again: ");
+			printf("Incorrect answer! Input 1, 2 or 3.\nYour answer: ");
 		}
 	}
 	return i;
 }
 
 int main() {
-	int answer, balcony, floor, window;
+	int answer = 0, balcony = 0, floor = 0, window = 0;
 	while (1) {
 		Menu();
-		answer = Check();
+		answer = CheckAnswer();
 		switch (answer) {
 		case 1:
 			printf("\nInput the number of balconies: ");
-			balcony = Check();
+			balcony = CheckAnswer();
 			printf("Input the number of windows: ");
-			window = Check();
+			window = CheckAnswer();
 			printf("Input the number of floor: ");
-			floor = Check();
+			floor = CheckAnswer();
 			Information(balcony, floor, window);
 			break;
 		case 2:
@@ -80,9 +81,7 @@ int main() {
 			printf("Goodbye!");
 			return 0;
 		default:
-			printf("Incorrect input! Input 1, 2 or 3");
-			break;
+			printf("Incorrect answer! Input 1, 2 or 3.\n");
 		}
 	}
-
 }
