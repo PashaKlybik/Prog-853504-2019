@@ -54,19 +54,17 @@ double getDistance(int x1, int y1, int x2, int y2) {
 
 bool isTriangle(double sideLength[]) {
 	double maxLengthOfSide = sideLength[0];
-	int indexOfMaxSideLength = 0;
 
 	for (int i = 1; i < SIZE; i++) {
 		if (maxLengthOfSide < sideLength[i]) {
 			maxLengthOfSide = sideLength[i];
-			indexOfMaxSideLength = i;
 		}
 	}
 
 	double sumOfSide = 0;
 
 	for (int i = 0; i < SIZE; i++) {
-		sumOfSide += indexOfMaxSideLength != i ? sideLength[i] : 0;
+		sumOfSide += maxLengthOfSide != sideLength[i] ? sideLength[i] : 0;
 	}
 	return maxLengthOfSide < sumOfSide;
 }
