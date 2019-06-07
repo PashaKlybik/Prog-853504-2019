@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 //Функция для заказа продуктов
 void setVeg(int *a, int *b, int *c){
 	do{
